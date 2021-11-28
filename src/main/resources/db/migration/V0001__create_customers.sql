@@ -9,7 +9,7 @@ CREATE TABLE t_project_estimate (
     name VARCHAR(50),
     id_customer int(11),
     estimated_hours int(6),
-    CONSTRAINT fk_project_estimate_customers FOREIGN KEY (id_customer) REFERENCES customers (id)
+    CONSTRAINT fk_project_estimate_customers FOREIGN KEY (id_customer) REFERENCES t_customers (id)
 );
 
 CREATE TABLE t_appointment_hours (
@@ -21,6 +21,6 @@ CREATE TABLE t_appointment_hours (
     start_date DATETIME,
     end_date DATETIME,
     status VARCHAR(2),
-    CONSTRAINT fk_appointment_hours_customers FOREIGN KEY (id_customers) REFERENCES customers (id)
-    CONSTRAINT fk_appointment_hours_proj FOREIGN KEY (id_project_estimate) REFERENCES customers (id)
+    CONSTRAINT fk_appointment_hours_customers FOREIGN KEY (id_customer) REFERENCES t_customers (id),
+    CONSTRAINT fk_appointment_hours_proj FOREIGN KEY (id_project_estimate) REFERENCES t_project_estimate (id)
 );

@@ -1,6 +1,5 @@
 package br.com.scardofax.scfxcontrolhours.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,7 +10,6 @@ import java.math.BigDecimal;
 public class Customers {
 
     @Id
-    @Column(name = "id_customer")
     private Integer id;
 
     private String name;
