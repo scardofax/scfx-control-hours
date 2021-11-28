@@ -1,4 +1,4 @@
-package br.com.scardofax.scfxcontrolhours.model;
+package br.com.scardofax.scfxcontrolhoursapi.model;
 
 import javax.persistence.*;
 
@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class ProjectEstimate {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
